@@ -2,21 +2,21 @@ package procesos;
 
 import java.io.IOException;
 
-public class ProcessBuilderBasico {
+public class RuntimeBasico {
 
 	public static void main(String[] args) {
-		
+
 		if(args.length < 1) {
 			System.err.println("Debe inicia el comando a ejeutar");
 			System.exit(-1);//0 es que el proceso termina bien(Creas tus propios codigos de error)
 		}
 		
-		ProcessBuilder pb = new ProcessBuilder(args);
+		Runtime runtime = Runtime.getRuntime();
 		
 		try {
-			Process process = pb.start();
+			Process process = runtime.exec(args);
 			
-			int exitValue = process.waitFor();//Espera a que termine el proceso
+			int exitValue = process.waitFor();
 			System.out.println("Resultado de ejecucion ha sido: " + exitValue);
 		} catch (IOException e) {
 			System.out.println("Error entrada/salida");
