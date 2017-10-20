@@ -1,6 +1,7 @@
 package procesos;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,8 +16,9 @@ public class ProcessBuilderInputRedirect {
 		}
 		
 		ProcessBuilder pb = new ProcessBuilder(args);
-		
+		pb.directory(new File("C:\\"));//Directorio para hacer el dir
 		try {
+			
 			Process process = pb.start();
 			
 			//Mostrar lo que haria el proceso hijo
