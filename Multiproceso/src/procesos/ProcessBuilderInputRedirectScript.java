@@ -5,8 +5,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class ProcessBuilderInputRedirectScript {
 
@@ -29,6 +31,13 @@ public class ProcessBuilderInputRedirectScript {
 			
 			pb.environment().put("cuantas", "10");
 			pb.environment().put("direccion", "127.0.0.30");
+			
+			String consulta = pb.environment().get("direccion");
+			Collection<String> valores = pb.environment().values();
+			Set<String> keys = pb.environment().keySet();
+			System.out.println("La direccion ip es: " + consulta);
+			System.out.println("Total valores: " + valores.toString());
+			System.out.println("Total keys: " + keys.toString());
 			
 			Process process = pb.start();
 			
