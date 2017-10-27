@@ -32,7 +32,7 @@ public class EjercicioProcessBuilderInputRedirect {
 				System.out.println(linea);
 			}
 			
-			br.close();
+			is.close();
 		
 			int exitValue = proceso.waitFor();//Espera a que termine el proceso
 			System.out.println("Resultado de ejecucion ha sido: " + exitValue);
