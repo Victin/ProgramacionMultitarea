@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 import javax.swing.JOptionPane;
 
 
-public class EjercicioProcessBuilderInputRedirect {
+public class Ejercicio2 {
 
 	public static void main(String[] args) {
 	
