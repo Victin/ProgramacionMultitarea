@@ -1,8 +1,5 @@
 package procesos;
 
-import java.util.Scanner;
-
-
 public class Aleatorios {
 
 	public static void main(String[] args) {
