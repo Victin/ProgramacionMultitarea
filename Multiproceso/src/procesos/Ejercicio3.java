@@ -28,16 +28,12 @@ public class Ejercicio3 {
 					
 					ProcessBuilder pb = new ProcessBuilder("java", "-jar", "C:\\Users\\alumno\\Documents\\Clase\\Eclipse\\GITProgramacionMultitarea\\Aleatorio.jar", minimo, maximo);
 					
-					try {
-						File output = new File("output.txt");
-						output.createNewFile();
-						pb.redirectOutput(output);
-						File error = new File("error.txt");
-						pb.redirectError(error);
-					} catch (IOException e1) {
-						System.out.println("Error al escribir los ficheros");
-					}
+					File output = new File("C:\\Users\\alumno\\Documents\\Clase\\Eclipse\\GITProgramacionMultitarea\\Multiproceso\\Archivos\\output.txt");
+					pb.redirectOutput(output);//Muestra la salida del proceso
 					
+					File error = new File("C:\\Users\\alumno\\Documents\\Clase\\Eclipse\\GITProgramacionMultitarea\\Multiproceso\\Archivos\\error.txt");
+					pb.redirectError(error);
+						
 					try {
 						Process proceso = pb.start();
 				
