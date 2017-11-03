@@ -1,6 +1,7 @@
 package procesos;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -26,6 +27,16 @@ public class Ejercicio3 {
 					String maximo = sc.next();
 					
 					ProcessBuilder pb = new ProcessBuilder("java", "-jar", "C:\\Users\\alumno\\Documents\\Clase\\Eclipse\\GITProgramacionMultitarea\\Aleatorio.jar", minimo, maximo);
+					
+					try {
+						File output = new File("output.txt");
+						output.createNewFile();
+						pb.redirectOutput(output);
+						File error = new File("error.txt");
+						pb.redirectError(error);
+					} catch (IOException e1) {
+						System.out.println("Error al escribir los ficheros");
+					}
 					
 					try {
 						Process proceso = pb.start();
