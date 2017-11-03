@@ -28,11 +28,13 @@ public class Ejercicio3 {
 					
 					ProcessBuilder pb = new ProcessBuilder("java", "-jar", "C:\\Users\\alumno\\Documents\\Clase\\Eclipse\\GITProgramacionMultitarea\\Aleatorio.jar", minimo, maximo);
 					
+					/*
 					File output = new File("C:\\Users\\alumno\\Documents\\Clase\\Eclipse\\GITProgramacionMultitarea\\Multiproceso\\Archivos\\output.txt");
-					pb.redirectOutput(output);//Muestra la salida del proceso
+					pb.redirectOutput(output); //Muestra la salida del proceso sin mostrarlo por consola
 					
 					File error = new File("C:\\Users\\alumno\\Documents\\Clase\\Eclipse\\GITProgramacionMultitarea\\Multiproceso\\Archivos\\error.txt");
 					pb.redirectError(error);
+					*/
 						
 					try {
 						Process proceso = pb.start();
