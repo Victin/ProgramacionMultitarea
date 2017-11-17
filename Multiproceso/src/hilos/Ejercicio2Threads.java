@@ -2,7 +2,7 @@ package hilos;
 
 public class Ejercicio2Threads extends Thread{
 
-	private boolean finaliza = true;
+	private boolean finaliza = false;
 	private int milis;
 	
 	public Ejercicio2Threads(String nombre, int milis) {
@@ -11,7 +11,7 @@ public class Ejercicio2Threads extends Thread{
 	}
 	
 	public void stopHilo() {
-		finaliza = false;
+		finaliza = true;
 		this.interrupt();
 	}
 	
@@ -33,7 +33,7 @@ public class Ejercicio2Threads extends Thread{
 	
 	public void run() {
 		int cont = 1;
-		while(finaliza || esPar(cont) && cont < 100) {
+		while(!finaliza || esPar(cont) && cont < 100) { //Si cuando finaliza es true(!) y esPar es false vuelve a hacer el while hasta que esPar sea true. Si una de las dos es false el while sigue
 			System.out.println(cont + " " + this.getName());
 			cont ++;
 			try {
