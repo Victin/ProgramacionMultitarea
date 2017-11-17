@@ -4,7 +4,6 @@ public class Ejercicio2Threads extends Thread{
 
 	private boolean finaliza = true;
 	private int milis;
-	private int cont = 0;
 	
 	public Ejercicio2Threads(String nombre, int milis) {
 		super(nombre);
@@ -13,19 +12,29 @@ public class Ejercicio2Threads extends Thread{
 	
 	public void stopHilo() {
 		finaliza = false;
-		if(cont % 2 == 0) {
-			this.interrupt();
-			System.out.println("Hilo ternimado en " + cont);
-		}else {
-			cont ++;
-			this.interrupt();
-			System.out.println("Hilo terminado en impar sumado uno " + cont);
+		this.interrupt();
+	}
+	
+	public static boolean esPrimo(int numero){
+		  int contador = 2;
+		  boolean primo = true;
+		  while ((primo) && (contador!=numero)){
+		    if (numero % contador == 0) {
+		      primo = false;
+		      contador++;
+		    }
+	    }
+		  return primo;
 		}
+	
+	public boolean esPar(int numero) {
+		return numero % 2 == 0;
 	}
 	
 	public void run() {
-		while(finaliza && cont < 100) {
-			System.out.println(cont + " " +this.getName());
+		int cont = 1;
+		while(finaliza || esPar(cont) && cont < 100) {
+			System.out.println(cont + " " + this.getName());
 			cont ++;
 			try {
 				this.sleep(milis);

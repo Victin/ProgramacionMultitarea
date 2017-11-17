@@ -23,5 +23,16 @@ public class Ejercicio2ThreadsMain {
 		}
 		
 		hilo[0].stopHilo();
+		System.out.println(hilo[0].isAlive());	
+		
+		
+		try {
+			Thread.sleep(6000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		hilo[1].stopHilo();
+		
 	}
 }
